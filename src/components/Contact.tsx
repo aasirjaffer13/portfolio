@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 const contacts = [
   { label: 'GITHUB — AASIRJAFFER13', link: 'https://github.com/aasirjaffer13' },
   { label: 'LINKEDIN — AASIR JAFFER', link: 'https://www.linkedin.com/in/aasir-jaffer-88a826366' },
-  { label: 'PHONE — +91 6006387676', link: 'tel:+916006387676' },
 ]
 
 const fadeInUp = {
