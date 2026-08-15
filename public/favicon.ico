@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #000; }
+    .accent { fill: #00ff00; }
+  </style>
+  <rect class="bg" width="32" height="32"/>
+  <g class="accent" stroke-width="1.5">
+    <!-- Left bracket -->
+    <path d="M 6 4 L 6 28 M 6 4 L 12 4 M 6 28 L 12 28"/>
+    <!-- Right bracket -->
+    <path d="M 26 4 L 26 28 M 26 4 L 20 4 M 26 28 L 20 28"/>
+    <!-- Center dot representing AI -->
+    <circle cx="16" cy="16" r="2"/>
+  </g>
+</svg>
