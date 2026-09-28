@@ -1,6 +1,80 @@
 import { motion } from 'framer-motion'
 
-const projects = [
+const GITHUB = 'https://github.com/aasirjaffer13'
+
+type Project = {
+  title: string
+  company: string
+  location: string
+  period: string
+  description: string
+  skills: string[]
+  repo?: string
+  demo?: string
+}
+
+const projects: Project[] = [
+  {
+    title: 'Adab For Kashaer',
+    company: 'Full-Stack Canvas & Publishing Platform',
+    location: 'TypeScript · React · Supabase',
+    period: '2026',
+    description:
+      'A collaborative design and publishing platform built around an infinite canvas. Drag-and-drop image and text layers powered by Konva, an AI prompt overlay, authenticated dashboards, role-based boards, and a markdown blog engine — backed by Supabase and shipped to Cloudflare and Vercel with Playwright end-to-end tests.',
+    skills: ['TanStack Start', 'React', 'Konva', 'Supabase', 'Cloudflare', 'Playwright'],
+    repo: `${GITHUB}/Adab-For-Kashaer`,
+    demo: 'https://adabforkasheer.vercel.app',
+  },
+  {
+    title: 'Library Management System',
+    company: 'Desktop Application',
+    location: 'Java · Swing · H2 Database',
+    period: '2026',
+    description:
+      'A zero-configuration Java Swing desktop application covering the full library workflow: role-based login with SHA-256 password hashing, book and member management, issuing and returning with automatic overdue fine calculation, reservations with auto-expiry, and transaction history — structured across a clean model → repository → service → UI layered architecture.',
+    skills: ['Java 21', 'Swing', 'H2 Database', 'Layered Architecture', 'SHA-256 Auth'],
+    repo: `${GITHUB}/library-management-project`,
+  },
+  {
+    title: 'Heart Disease Prediction System',
+    company: 'CardioRisk · Machine Learning Web App',
+    location: 'Python · Scikit-learn · Streamlit',
+    period: '2026',
+    description:
+      'A supervised learning pipeline that predicts heart disease risk from 918 patient records and 11 clinical features. Covers data cleaning, EDA, model comparison, stratified 5-fold cross-validation and hyperparameter tuning, ending in a tuned Logistic Regression pipeline with odds-ratio interpretation, deployed as an interactive Streamlit web application.',
+    skills: ['Pandas', 'NumPy', 'Scikit-learn', 'Cross-validation', 'Streamlit'],
+    repo: `${GITHUB}/Heart-Risk-Alert`,
+  },
+  {
+    title: 'Real Estate Price Prediction',
+    company: 'Regression Modelling',
+    location: 'Python · Jupyter Notebook',
+    period: '2025',
+    description:
+      'A Melbourne housing price estimator covering data cleaning, exploratory data analysis and feature engineering, starting from a Decision Tree baseline with tuned max_leaf_nodes and graduating to a Random Forest regressor evaluated on Mean Absolute Error.',
+    skills: ['EDA', 'Feature Engineering', 'Random Forest', 'Pandas', 'Jupyter'],
+    repo: `${GITHUB}/real-estate-price-prediction-project`,
+  },
+  {
+    title: 'Digital Clock & Stopwatch',
+    company: 'GUI Application',
+    location: 'Python · PyQt5',
+    period: '2025',
+    description:
+      'A PyQt5 desktop clock with an integrated stopwatch: live time and full date display, start/stop/reset stopwatch with 50 ms precision, a 12-hour/24-hour format toggle, and a neon-on-black interface with custom font support.',
+    skills: ['Python', 'PyQt5', 'Qt', 'GUI Design', 'Event Timing'],
+    repo: `${GITHUB}/digital-clock`,
+  },
+  {
+    title: 'Digital Literacy Project',
+    company: 'Academic Portfolio · VIT Bhopal',
+    location: 'Design · Tooling · Cyber Safety',
+    period: '2025',
+    description:
+      'A five-module initiative bridging technical skill and professional digital citizenship: an awareness infographic, a centralized student portfolio, hands-on GitHub and Google Workspace collaboration workflows, professional email and social media etiquette, and a cybercrime case-study prevention guide.',
+    skills: ['Visual Communication', 'GitHub', 'Google Workspace', 'Net Etiquette', 'Cyber Defense'],
+    repo: `${GITHUB}/digital-literacy-project`,
+  },
   {
     title: 'Intelligent Chatbot System',
     company: 'AI / NLP Project',
@@ -9,24 +83,6 @@ const projects = [
     description:
       'An AI-powered conversational chatbot built with Python, NLP libraries and deep learning frameworks. Implemented intent recognition and context management to improve interaction quality and response accuracy across multiple domains.',
     skills: ['Python', 'NLP', 'Deep Learning', 'Intent Recognition', 'Context Management'],
-  },
-  {
-    title: 'Heart Disease Prediction System',
-    company: 'Machine Learning Web App',
-    location: 'Python · Scikit-learn',
-    period: '2026',
-    description:
-      'A machine learning web application that predicts the likelihood of heart disease from patient health parameters. Focused on data preprocessing, model training, prediction accuracy and healthcare decision support.',
-    skills: ['Pandas', 'NumPy', 'Scikit-learn', 'Data Preprocessing', 'Web Interface'],
-  },
-  {
-    title: 'Real Estate Price Prediction',
-    company: 'Regression Modelling',
-    location: 'Python · Jupyter Notebook',
-    period: '2025',
-    description:
-      'A model that estimates property prices from housing features, covering data cleaning, exploratory data analysis, feature engineering and regression modelling.',
-    skills: ['EDA', 'Feature Engineering', 'Regression', 'Pandas', 'Jupyter'],
   },
   {
     title: 'Published Writer',
@@ -43,7 +99,7 @@ const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-100px' },
-  transition: { duration: 1, ease: 'easeOut' }
+  transition: { duration: 1, ease: 'easeOut' },
 }
 
 export function Work() {
@@ -74,9 +130,25 @@ export function Work() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
                 <div className="lg:col-span-5">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-2">
-                    {exp.title}
-                  </h3>
+                  {exp.repo ? (
+                    <a
+                      href={exp.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-baseline gap-2 text-white hover:text-gray-300 transition-colors"
+                    >
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-2">
+                        {exp.title}
+                      </h3>
+                      <span className="text-base text-gray-600 group-hover:text-gray-400 transition-colors">
+                        ↗
+                      </span>
+                    </a>
+                  ) : (
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-2">
+                      {exp.title}
+                    </h3>
+                  )}
                   <p className="text-base lg:text-lg text-gray-400">{exp.company}</p>
                   <p className="text-sm text-gray-600 mt-2">{exp.location}</p>
                 </div>
@@ -99,12 +171,48 @@ export function Work() {
                       </span>
                     ))}
                   </div>
+
+                  {(exp.repo || exp.demo) && (
+                    <div className="flex flex-wrap gap-6 mt-6">
+                      {exp.repo && (
+                        <a
+                          href={exp.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+                        >
+                          Source ↗
+                        </a>
+                      )}
+                      {exp.demo && (
+                        <a
+                          href={exp.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+                        >
+                          Live demo ↗
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.article>
           ))}
           <div className="border-t border-gray-800" />
         </div>
+
+        <motion.div {...fadeInUp} className="mt-10 lg:mt-14">
+          <a
+            href={GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+          >
+            All repositories on GitHub ↗
+          </a>
+        </motion.div>
       </div>
     </section>
   )
