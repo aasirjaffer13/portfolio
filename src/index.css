@@ -148,3 +148,49 @@
 .img-editorial:hover {
   filter: grayscale(0%);
 }
+
+/* Hero fills the visible viewport on mobile (no browser-chrome jump) */
+.hero-viewport {
+  height: 100vh;
+}
+
+@supports (height: 100svh) {
+  .hero-viewport {
+    height: 100svh;
+  }
+}
+
+/* Underline sweep on links */
+.link-sweep {
+  position: relative;
+  display: inline-block;
+}
+
+.link-sweep::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.link-sweep:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

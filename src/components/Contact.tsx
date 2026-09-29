@@ -1,4 +1,21 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+
+function LocalTime() {
+  const [now, setNow] = useState(() => new Date())
+
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(new Date()), 1000)
+    return () => window.clearInterval(id)
+  }, [])
+
+  const time = now.toLocaleTimeString('en-GB', {
+    timeZone: 'Asia/Kolkata',
+    hour12: false,
+  })
+
+  return <span className="text-gray-400 tabular-nums">{time} IST</span>
+}
 
 const contacts = [
   { label: 'GITHUB — AASIRJAFFER13', link: 'https://github.com/aasirjaffer13' },
@@ -58,7 +75,9 @@ export function Contact() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex items-center justify-between border-t border-gray-800 py-5 md:py-6 group hover:bg-gray-900/30 transition-colors px-4 -mx-4"
             >
-              <span className="text-sm text-gray-400 tracking-widest">{contact.label}</span>
+              <span className="text-sm text-gray-400 tracking-widest transition-colors group-hover:text-white">
+                {contact.label}
+              </span>
               <span className="text-gray-500 group-hover:text-white transition-colors">↗</span>
             </motion.a>
           ))}
@@ -75,7 +94,7 @@ export function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
             <a
               href="mailto:aasirjaffer15@gmail.com"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
             >
               aasirjaffer15@gmail.com
             </a>
@@ -83,7 +102,7 @@ export function Contact() {
               href="https://github.com/aasirjaffer13"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
             >
               GitHub
             </a>
@@ -91,7 +110,7 @@ export function Contact() {
               href="https://www.linkedin.com/in/aasir-jaffer-88a826366"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
             >
               LinkedIn
             </a>
@@ -105,8 +124,10 @@ export function Contact() {
           <p className="text-xs text-gray-600 tracking-widest uppercase">
             © {new Date().getFullYear()} Aasir Jaffer Lone
           </p>
-          <p className="text-xs text-gray-600 tracking-widest uppercase">
-            Bhopal, India
+          <p className="text-xs text-gray-600 tracking-widest uppercase flex items-center gap-3">
+            <span>Bhopal, India</span>
+            <span className="w-px h-3 bg-gray-700" aria-hidden="true" />
+            <LocalTime />
           </p>
         </motion.footer>
       </div>

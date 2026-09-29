@@ -44,9 +44,9 @@ export function Skills() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="border-b border-gray-800 pb-4"
+              className="border-b border-gray-800 pb-4 group"
             >
-              <span className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light">
+              <span className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light transition-all duration-300 ease-out group-hover:text-white group-hover:translate-x-1.5 inline-block">
                 {skill}
               </span>
             </motion.div>

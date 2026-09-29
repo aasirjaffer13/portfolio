@@ -129,18 +129,21 @@ export function Work() {
               className="border-t border-gray-800 py-8 md:py-12 lg:py-16 group"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-                <div className="lg:col-span-5">
+                <div className="lg:col-span-5 transition-transform duration-500 ease-out group-hover:translate-x-1">
+                  <span className="block font-display text-xs tracking-[0.3em] text-gray-600 mb-3">
+                    {String(index + 1).padStart(2, '0')} —
+                  </span>
                   {exp.repo ? (
                     <a
                       href={exp.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-baseline gap-2 text-white hover:text-gray-300 transition-colors"
+                      className="inline-flex items-baseline gap-2 text-white"
                     >
                       <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-2">
                         {exp.title}
                       </h3>
-                      <span className="text-base text-gray-600 group-hover:text-gray-400 transition-colors">
+                      <span className="text-base text-gray-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white inline-block">
                         ↗
                       </span>
                     </a>
@@ -165,7 +168,7 @@ export function Work() {
                     {exp.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 text-xs text-gray-500 border border-gray-800 rounded-full"
+                        className="px-3 py-1 text-xs text-gray-500 border border-gray-800 rounded-full transition-colors duration-300 group-hover:border-gray-700 group-hover:text-gray-400"
                       >
                         {skill}
                       </span>
@@ -179,7 +182,7 @@ export function Work() {
                           href={exp.repo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors link-sweep"
                         >
                           Source ↗
                         </a>
@@ -189,7 +192,7 @@ export function Work() {
                           href={exp.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+                          className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors link-sweep"
                         >
                           Live demo ↗
                         </a>
@@ -203,12 +206,12 @@ export function Work() {
           <div className="border-t border-gray-800" />
         </div>
 
-        <motion.div {...fadeInUp} className="mt-10 lg:mt-14">
+        <motion.div {...fadeInUp} className="mt-12 lg:mt-16">
           <a
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs tracking-widest uppercase text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-gray-800"
+            className="text-sm tracking-widest uppercase text-gray-500 hover:text-white transition-colors link-sweep"
           >
             All repositories on GitHub ↗
           </a>
