@@ -88,33 +88,12 @@ export function Contact() {
           {...fadeInUp}
           className="mt-16 lg:mt-24 pt-12 lg:pt-16 border-t border-gray-800"
         >
-          <p className="text-sm text-gray-500 mb-6 lg:mb-8 tracking-widest uppercase">
-            Or reach me directly
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
-            <a
-              href="mailto:aasirjaffer15@gmail.com"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
-            >
-              aasirjaffer15@gmail.com
-            </a>
-            <a
-              href="https://github.com/aasirjaffer13"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aasir-jaffer-88a826366"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
-            >
-              LinkedIn
-            </a>
-          </div>
+          <a
+            href="mailto:aasirjaffer15@gmail.com"
+            className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
+          >
+            aasirjaffer15@gmail.com
+          </a>
         </motion.div>
 
         <motion.footer

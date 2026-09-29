@@ -1,7 +1,6 @@
 import { MotionConfig } from 'framer-motion'
 import { Navigation } from '@/components/Navigation'
 import { GrainOverlay } from '@/components/GrainOverlay'
-import { ScrollProgress } from '@/components/ScrollProgress'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
@@ -21,7 +20,6 @@ export default function Index() {
         >
           Skip to content
         </a>
-        <ScrollProgress />
         <GrainOverlay />
         <Navigation />
         <main id="content" tabIndex={-1}>
