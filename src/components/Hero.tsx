@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import portraitDesktop from '@/assets/aasir-1920.jpg'
-import portraitMobile from '@/assets/aasir-1080.jpg'
+
+const portraitDesktop = '/hero-1920.jpg'
+const portraitMobile = '/hero-1080.jpg'
 
 const nameLines = ['AASIR', 'JAFFER', 'LONE']
 
