@@ -88,12 +88,22 @@ export function Contact() {
           {...fadeInUp}
           className="mt-16 lg:mt-24 pt-12 lg:pt-16 border-t border-gray-800"
         >
-          <a
-            href="mailto:aasirjaffer15@gmail.com"
-            className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
-          >
-            aasirjaffer15@gmail.com
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+            <a
+              href="mailto:aasirjaffer15@gmail.com"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
+            >
+              aasirjaffer15@gmail.com
+            </a>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors link-sweep"
+            >
+              Download CV
+            </a>
+          </div>
         </motion.div>
 
         <motion.footer
@@ -107,6 +117,8 @@ export function Contact() {
             <span>Bhopal, India</span>
             <span className="w-px h-3 bg-gray-700" aria-hidden="true" />
             <LocalTime />
+            <span className="w-px h-3 bg-gray-700" aria-hidden="true" />
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">CV</a>
           </p>
         </motion.footer>
       </div>
