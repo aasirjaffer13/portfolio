@@ -46,6 +46,17 @@ const projects: Project[] = [
     repo: `${GITHUB}/Heart-Risk-Alert`,
   },
   {
+    title: 'NeuroSleep Sleep-Staging Pipeline',
+    company: 'Open Source · Fork & Contribution',
+    location: 'Python · PyTorch · Jupyter',
+    period: '2026',
+    description:
+      'A collaborative deep-learning pipeline for five-stage sleep classification (Wake, N1, N2, N3, REM) from EEG, EOG and EMG signals, delivering a 99,477-parameter sub-100K model that reaches 90.48% accuracy and 0.83 Cohen\u2019s kappa on held-out subjects. Contributed the model evaluation and performance work — metric definitions, per-stage analysis, fit diagnosis and benchmark reporting — committed from my fork and credited in the project\u2019s team and citation.',
+    skills: ['PyTorch', 'Model Evaluation', 'Jupyter', 'Scikit-learn', 'Streamlit'],
+    repo: `${GITHUB}/neuromorphic-sleep-staging-pipeline`,
+    demo: 'https://neuromorphic-sleep-stage.streamlit.app/',
+  },
+  {
     title: 'Real Estate Price Prediction',
     company: 'Regression Modelling',
     location: 'Python · Jupyter Notebook',
