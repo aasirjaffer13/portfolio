@@ -44,6 +44,7 @@ const projects: Project[] = [
       'A supervised learning pipeline that predicts heart disease risk from 918 patient records and 11 clinical features. Covers data cleaning, EDA, model comparison, stratified 5-fold cross-validation and hyperparameter tuning, ending in a tuned Logistic Regression pipeline with odds-ratio interpretation, deployed as an interactive Streamlit web application.',
     skills: ['Pandas', 'NumPy', 'Scikit-learn', 'Cross-validation', 'Streamlit'],
     repo: `${GITHUB}/Heart-Risk-Alert`,
+    demo: 'https://heartriskanalysiss.streamlit.app/',
   },
   {
     title: 'NeuroSleep Sleep-Staging Pipeline',
